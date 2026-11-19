@@ -1,0 +1,41 @@
+/*
+Insert an element in a sorted array
+at the appropriate position.
+*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int n, i, value;
+    int a[101];
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    scanf("%d", &value);
+
+    i = n - 1;
+
+    while (i >= 0 && a[i] > value)
+    {
+        a[i + 1] = a[i];
+        i--;
+    }
+
+    a[i + 1] = value;
+    n++;
+
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}

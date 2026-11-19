@@ -1,0 +1,33 @@
+/*
+Write a program to check if a number is a perfect number.
+*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int number, i;
+    int sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    for (i = 1; i < number; i++)
+    {
+        if (number % i == 0)
+        {
+            sum = sum + i;
+        }
+    }
+
+    if (sum == number)
+    {
+        printf("Perfect number\n");
+    }
+    else
+    {
+        printf("Not perfect number\n");
+    }
+
+    return 0;
+}
