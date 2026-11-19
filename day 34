@@ -1,0 +1,41 @@
+/*
+Write a program to check if a number is prime.
+*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int number, i;
+    int isPrime = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number <= 1)
+    {
+        isPrime = 0;
+    }
+    else
+    {
+        for (i = 2; i * i <= number; i++)
+        {
+            if (number % i == 0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    if (isPrime == 1)
+    {
+        printf("Prime\n");
+    }
+    else
+    {
+        printf("Not prime\n");
+    }
+
+    return 0;
+}
